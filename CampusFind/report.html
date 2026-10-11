@@ -1,0 +1,67 @@
+<!doctype html><html lang="en"><head><meta charset="UTF-8"/><meta name="viewport" content="width=device-width, initial-scale=1.0"/><meta name="theme-color" content="#101027"/><title>CampusFind — APSIT Lost & Found</title><link rel="stylesheet" href="styles.css"/></head><body>  <header class="site-header">
+    <a class="brand" href="index.html" aria-label="CampusFind home"><span class="brand-mark">cf</span><span>campus<span class="brand-accent">find</span></span></a>
+    <nav class="nav-links" aria-label="Main navigation"><a href="index.html">Home</a><a href="listings.html">Explore listings</a><a href="report.html" aria-current="page">Report an item</a></nav>
+    <a class="button button-dark header-cta" href="report.html">＋ Report an item</a>
+  </header>
+  <main>
+    <section class="report-section" id="report">
+      <div class="report-intro">
+        <div class="eyebrow">MAKE A DIFFERENCE</div>
+        <h2>Help an item<br /><span>find its person.</span></h2>
+        <p>Every small report makes campus life a little easier. Add the details you know and let the community help.</p>
+        <div class="report-tip"><span>✳</span><div><strong>A quick safety note</strong><br />Avoid posting private contact details or sensitive information about ID cards.</div></div>
+      </div>
+      <form id="report-form" class="report-form">
+        <div class="form-topline"><span>NEW LISTING</span><span class="required-note">* Required fields</span></div>
+        <h3>Report an item</h3>
+        <p class="form-subtitle">Tell us a little about what happened.</p>
+        <div class="field-group">
+          <label>What are you reporting? <span>*</span></label>
+          <div class="choice-row">
+            <label class="choice-card"><input type="radio" name="status" value="lost" checked /><span class="choice-icon">⌕</span><span><strong>I lost something</strong><small>Help me find it</small></span></label>
+            <label class="choice-card"><input type="radio" name="status" value="found" /><span class="choice-icon">✳</span><span><strong>I found something</strong><small>Help it find its owner</small></span></label>
+          </div>
+        </div>
+        <div class="form-grid">
+          <div class="field-group">
+            <label for="item-name">Item name <span>*</span></label>
+            <input id="item-name" name="name" required maxlength="70" placeholder="e.g. Blue water bottle" />
+          </div>
+          <div class="field-group">
+            <label for="item-category">Category <span>*</span></label>
+            <select id="item-category" name="category" required>
+              <option value="">Choose a category</option>
+              <option>Electronics</option><option>ID cards</option><option>Stationery</option>
+              <option>Accessories</option><option>Bags</option><option>Other</option>
+            </select>
+          </div>
+          <div class="field-group">
+            <label for="item-location">Location <span>*</span></label>
+            <input id="item-location" name="location" required maxlength="80" placeholder="e.g. Second floor, 207" />
+          </div>
+          <div class="field-group">
+            <label for="item-date">Date <span>*</span></label>
+            <input id="item-date" name="date" type="date" required />
+          </div>
+        </div>
+        <div class="field-group image-upload-group">
+          <label for="item-image">Item photo <span class="optional-label">(optional)</span></label>
+          <label class="upload-dropzone" for="item-image"><span class="upload-icon">＋</span><strong>Upload a photo of the item</strong><small>JPG, PNG or WEBP · max 2 MB</small><span class="upload-filename" id="upload-filename">No image selected</span></label>
+          <input id="item-image" name="image" type="file" accept="image/png,image/jpeg,image/webp" hidden />
+          <img id="image-preview" class="image-preview hidden" alt="Preview of uploaded item" />
+        </div>
+        <div class="field-group">
+          <label for="item-description">Description</label>
+          <textarea id="item-description" name="description" rows="3" maxlength="240" placeholder="Any helpful details (avoid private information)..."></textarea>
+        </div>
+        <button class="button button-dark submit-button" type="submit">Publish listing <span>↗</span></button>
+        <p class="form-footnote">Prototype notice: listings are saved in this browser only for now. Database connection can be added after the design is final.</p>
+      </form>
+    </section>
+
+
+  </main>
+  <footer class="site-footer"><a class="brand footer-brand" href="index.html"><span class="brand-mark">cf</span><span>campus<span class="brand-accent">find</span></span></a><span>Made for APSIT.</span><span>ASDD Mini Project · 2026–27</span></footer>
+  <div id="toast" class="toast" role="status" aria-live="polite"></div>
+  <script src="app.js"></script>
+</body></html>

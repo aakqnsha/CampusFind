@@ -1,0 +1,25 @@
+name: CampusFind CI
+
+on:
+  push:
+    branches: ["main"]
+  pull_request:
+    branches: ["main"]
+  workflow_dispatch:
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Check out repository
+        uses: actions/checkout@v4
+      - name: Check required project files
+        run: |
+          test -f index.html
+          test -f listings.html
+          test -f report.html
+          test -f styles.css
+          test -f app.js
+          test -f Dockerfile
+      - name: Build Docker image
+        run: docker build -t campusfind:ci .
